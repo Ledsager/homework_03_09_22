@@ -51,7 +51,11 @@ Console.WriteLine("Сгенерированный массив :");
 PrintArray(array);
 InputMas(array);
 Console.WriteLine("Скопированный массив :");
-PrintArray(CopyMas(array));
+int[] copyarray = CopyMas(array);
+foreach (var element in copyarray)
+    Console.Write($"{element} ");
+Console.WriteLine();
+//Console.WriteLine(PrintArray(copyarray));
 /*
 //второй способ
 foreach (var element in array)
