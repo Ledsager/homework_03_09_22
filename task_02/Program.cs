@@ -6,9 +6,9 @@ Console.WriteLine("Input scaling factor :");
 int scalfactor;
     while (!int.TryParse(Console.ReadLine(), out scalfactor))//проверка что вводится число
         Console.Write("Неверный ввод! \nВведите значение снова : ");
-//Console.WriteLine("Input coordinate list :");
-//string strokavershin = Console.ReadLine();
-string strokavershin = "(10,10) (4,20) (14,114) (0,41) (0,0) (0,4)";
+Console.WriteLine("Input coordinate list :");
+string strokavershin = Console.ReadLine();
+//string strokavershin = "(0,0) (2,0) (2,2) (0,2) (0,0) (0,4)";
 string koordinate = "";
 int i = 0;
 do
