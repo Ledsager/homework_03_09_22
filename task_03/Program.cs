@@ -42,28 +42,9 @@ int[] CopyMas(int[] mas)
 Console.Write("Введите длинну массива:");
 int LengthArray = int.Parse(Console.ReadLine());
 int[] array = new int[LengthArray];
-/*
-int[] copyarray = new int[LengthArray];//второй способ
-int i = 0;//второй способ
-*/
-//RandomArrayElement(array, -10, 10);
-Console.WriteLine("Сгенерированный массив :");
-PrintArray(array);
 InputMas(array);
 Console.WriteLine("Скопированный массив :");
 int[] copyarray = CopyMas(array);
 foreach (var element in copyarray)
     Console.Write($"{element} ");
 Console.WriteLine();
-//Console.WriteLine(PrintArray(copyarray));
-/*
-//второй способ
-foreach (var element in array)
-    {
-        copyarray[i] = element;
-        i++;
-    }
-Console.WriteLine("массив (второй вариант) :");
-PrintArray(copyarray);
-*/
-
