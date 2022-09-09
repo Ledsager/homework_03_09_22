@@ -3,18 +3,22 @@
 В результате показать координаты, которые получатся. при k = 2 получаем "(0,0) (4,0) (4,4) (0,4)"
 */
 Console.WriteLine("Input scaling factor :");
-int scalfactor;
-while (!int.TryParse(Console.ReadLine(), out scalfactor))//проверка что вводится число
+double scalfactor;
+while (!double.TryParse(Console.ReadLine(), out scalfactor))//проверка что вводится число
     Console.Write("Неверный ввод! \nВведите значение снова : ");
 
 Console.WriteLine("Input coordinate list :");
 string[] strarray = Console.ReadLine()?.Split(' ');
-int[] arrayverchin = new int[strarray.Length];
+double[] arrayverchin = new double[strarray.Length];
+//double[] scalarray = 
 for (int i = 0; i < strarray.Length; i++)
-    arrayverchin[i] = int.Parse(strarray[i]) * scalfactor;
+    arrayverchin[i] = double.Parse(strarray[i]) * scalfactor;
+
+
 
 Console.WriteLine($"Вершины фигуры с учетом коэффициента масштабирования k = {scalfactor}: ");
 for (int i = 0; i < (arrayverchin.Length-1); i++)
     {
         Console.Write("({0},{1}) ", arrayverchin[i], arrayverchin[i + 1]);
+        i++;
     }

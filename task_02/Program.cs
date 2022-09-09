@@ -3,8 +3,8 @@
 В результате показать координаты, которые получатся. при k = 2 получаем "(0,0) (4,0) (4,4) (0,4)"
 */
 Console.WriteLine("Input scaling factor :");
-int scalfactor;
-    while (!int.TryParse(Console.ReadLine(), out scalfactor))//проверка что вводится число
+double scalfactor;
+    while (!double.TryParse(Console.ReadLine(), out scalfactor))//проверка что вводится число
         Console.Write("Неверный ввод! \nВведите значение снова : ");
 Console.WriteLine("Input coordinate list (example: (0,0) (2,0) (2,2) (0,2) (0,0) (0,4) ) :");
 string strokavershin = Console.ReadLine();
@@ -21,10 +21,10 @@ do
         koordinate = koordinate + strokavershin[i].ToString();
         i++;
     }
-    int j;
-    if (int.TryParse(koordinate, out j) == true)
+    double j;
+    if (double.TryParse(koordinate, out j) == true)
     {
-        int b = Int32.Parse(koordinate);
+        double b = double.Parse(koordinate);
         Console.Write(b * scalfactor);
         Console.Write(strokavershin[i]);
     }
