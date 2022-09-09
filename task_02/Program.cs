@@ -6,18 +6,17 @@ Console.WriteLine("Input scaling factor :");
 int scalfactor;
     while (!int.TryParse(Console.ReadLine(), out scalfactor))//проверка что вводится число
         Console.Write("Неверный ввод! \nВведите значение снова : ");
-Console.WriteLine("Input coordinate list :");
+Console.WriteLine("Input coordinate list (example: (0,0) (2,0) (2,2) (0,2) (0,0) (0,4) ) :");
 string strokavershin = Console.ReadLine();
-//string strokavershin = "(0,0) (2,0) (2,2) (0,2) (0,0) (0,4)";
 string koordinate = "";
+strokavershin = strokavershin + " ";
 int i = 0;
 do
 {
 
     koordinate = "";
     while ((Convert.ToString(strokavershin[i]) != " ") && (Convert.ToString(strokavershin[i]) != "(") &&
-            (Convert.ToString(strokavershin[i]) != ")") && (Convert.ToString(strokavershin[i]) != ",") /*&&
-            (не знаю как определить конец строки если вводить с консоли и после последнего символа нажимают enter)*/)
+            (Convert.ToString(strokavershin[i]) != ")") && (Convert.ToString(strokavershin[i]) != ","))
     {
         koordinate = koordinate + strokavershin[i].ToString();
         i++;

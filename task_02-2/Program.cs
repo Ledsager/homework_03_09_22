@@ -4,44 +4,17 @@
 */
 Console.WriteLine("Input scaling factor :");
 int scalfactor;
-    while (!int.TryParse(Console.ReadLine(), out scalfactor))//проверка что вводится число
-        Console.Write("Неверный ввод! \nВведите значение снова : ");
-
- Console.WriteLine("Input  :");
-int scalfactor;
-    while (!int.TryParse(Console.ReadLine(), out scalfactor))//проверка что вводится число
-        Console.Write("Неверный ввод! \nВведите значение снова : ");
+while (!int.TryParse(Console.ReadLine(), out scalfactor))//проверка что вводится число
+    Console.Write("Неверный ввод! \nВведите значение снова : ");
 
 Console.WriteLine("Input coordinate list :");
-var numbers = Console.ReadLine()
-        .Split(new[] {" "},StringSplitOptions.RemoveEmptyEntries)
-        .Select(Int32.Parse);
-foreach(var n in numbers)
-    Console.WriteLine(n);
+string[] strarray = Console.ReadLine()?.Split(' ');
+int[] arrayverchin = new int[strarray.Length];
+for (int i = 0; i < strarray.Length; i++)
+    arrayverchin[i] = int.Parse(strarray[i]) * scalfactor;
 
-/*    
-string koordinate = "";
-int i = 0;
-do
-{
-
-    koordinate = "";
-    while ((Convert.ToString(strokavershin[i]) != " ") && (Convert.ToString(strokavershin[i]) != "(") &&
-            (Convert.ToString(strokavershin[i]) != ")") && (Convert.ToString(strokavershin[i]) != ","))
-/*    {
-        koordinate = koordinate + strokavershin[i].ToString();
-        i++;
-    }
-    int j;
-    if (int.TryParse(koordinate, out j) == true)
+Console.WriteLine($"Вершины фигуры с учетом коэффициента масштабирования k = {scalfactor}: ");
+for (int i = 0; i < (arrayverchin.Length-1); i++)
     {
-        int b = Int32.Parse(koordinate);
-        Console.Write(b * scalfactor);
-        Console.Write(strokavershin[i]);
+        Console.Write("({0},{1}) ", arrayverchin[i], arrayverchin[i + 1]);
     }
-    else
-        Console.Write(strokavershin[i]);
-    i++;
-}
-while (i < strokavershin.Length);
-*/
