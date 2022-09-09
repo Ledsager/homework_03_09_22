@@ -9,18 +9,6 @@ void InputMas(int[] position)
         position[i] = int.Parse(Console.ReadLine());
     }
 }
-
-// Метод для генерации значений элементов массива (с диапазоном от min до max)
-void RandomArrayElement(int[] position, int min, int max)
-{
-    Random rand = new Random();
-    int i = 0;
-    while (i < position.Length)
-    {
-        position[i] = rand.Next(min, max);
-        i++;
-    }
-}
 // Метод для вывода на экран элементов массива
 void PrintArray(int[] position)
 {
@@ -45,6 +33,4 @@ int[] array = new int[LengthArray];
 InputMas(array);
 Console.WriteLine("Скопированный массив :");
 int[] copyarray = CopyMas(array);
-foreach (var element in copyarray)
-    Console.Write($"{element} ");
-Console.WriteLine();
+PrintArray(copyarray);
